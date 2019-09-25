@@ -1,8 +1,8 @@
 
-import React, { Component, Fragment } from 'react'
-import { bindActionCreators, compose } from 'redux'
+import React, { Component } from 'react'
+import { bindActionCreators } from 'redux'
 import { connect } from 'react-redux'
-import { Typeahead } from 'react-bootstrap-typeahead'; 
+import { Typeahead } from 'react-bootstrap-typeahead';
 
 
 
@@ -13,13 +13,9 @@ import {
 import {
     fetchPokemon
 } from '../../actions/pokemon' ;
-  
+
 
 class Home  extends Component {
-
-    constructor(props) {
-        super(props);
-    }
 
     componentDidMount() {
         this.props.fetchPokedex();
@@ -34,7 +30,7 @@ class Home  extends Component {
     }
 
     render() {
-        if(this.props.pokemonList == undefined)
+        if(this.props.pokemonList === undefined)
         {
             return null;
         }
@@ -42,7 +38,7 @@ class Home  extends Component {
         let pokemonNameList =  this.props.pokemonList.map(pokemon => {
            return {name:pokemon.pokemon_species.name, id:pokemon.entry_number}
         });
-        
+
         return (
             <div className="container">
                 <h1 className="text-center">Gen List</h1>
@@ -58,7 +54,7 @@ class Home  extends Component {
                             <h3>{this.props.selectedPokemon.name}</h3>
                         </div>
                         <div class="row justify-content-md-center">
-                            <img src={this.props.selectedPokemon.sprites.front_default}></img>
+                            <img alt="pokemon sprite" src={this.props.selectedPokemon.sprites.front_default}></img>
                         </div>
                         <div class="row justify-content-md-center">
                             <p>

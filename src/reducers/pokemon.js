@@ -1,20 +1,8 @@
-import { combineReducers } from 'redux'
-
 import {
-  SELECT_POKEMON,
   INVALIDATE_POKEMON,
   REQUEST_POKEMON,
   RECEIVE_POKEMON
 } from '../actions/pokemon'
-
-function selectedPokemon(action) {
-    switch (action.type) {
-      case SELECT_POKEMON:
-        return action.pokemon
-      default:
-        return pokemon
-    }
-  }
 
 function pokemon(
     state = {
@@ -46,9 +34,4 @@ function pokemon(
     }
   }
 
-
-const rootReducer = combineReducers({
-    selectedPokemon
-  })
-  
   export default pokemon

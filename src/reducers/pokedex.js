@@ -1,5 +1,3 @@
-import { combineReducers } from 'redux'
-
 import {
   INVALIDATE_POKEDEX,
   REQUEST_POKEDEX,
@@ -36,9 +34,4 @@ function pokedex(
     }
   }
 
-
-const rootReducer = combineReducers({
-      pokedex
-  })
-  
   export default pokedex
